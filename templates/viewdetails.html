@@ -1,0 +1,54 @@
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+        <div class="container border text-light border-5 mt-5 fs-5 bg-dark">
+            <div class="row justify-content-center  ">
+                <div class="col">
+                    <form >
+                        {% csrf_token %}
+                        <div class="row g-5 border ">
+                            <div class="col">
+                                <p>Name</p>
+                            </div>
+                            <div class="col">
+                                <p>Age</p>
+                            </div>
+                            <div class="col">
+                                <p>Phone</p>
+                            </div>
+                            <div class="col">
+                                <p>Email</p>
+                            </div>
+                            <div class="col">
+                                <p>Password</p>
+                            </div>
+                        </div>
+                        {% for i in res %}
+                        
+                        <div class="row g-5 border ">
+                            <div class="col">
+                                <p>{{i.name}}</p>
+                            </div>
+                            <div class="col">
+                                <p>{{i.age}}</p>
+                            </div>
+                            <div class="col">
+                                <p>{{i.phone}}</p>
+                            </div>
+                            <div class="col">
+                                <p>{{i.email}}</p>
+                            </div>
+                            <div class="col">
+                                <p>{{i.password}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!-- Contact End -->
+{% include 'footer.html' %}
+{% endblock %}
